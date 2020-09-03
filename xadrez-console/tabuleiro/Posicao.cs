@@ -1,9 +1,9 @@
 ﻿namespace tabuleiro
 {
     /// <summary>
-    /// Classe responsável por definir a posição das peças no tabuleiro.
+    /// Classe responsável por definir as posições das peças no tabuleiro.
     /// </summary>
-    public class Posicao
+    class Posicao
     {
         public int Linha { get; set; }
         public int Coluna { get; set; }

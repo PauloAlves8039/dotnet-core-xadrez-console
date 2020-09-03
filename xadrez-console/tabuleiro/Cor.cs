@@ -3,7 +3,7 @@
     /// <summary>
     /// Enum responsável por definir as cores das peças.
     /// </summary>
-    public enum Cor
+    enum Cor
     {
         Branca,
         Preta,
