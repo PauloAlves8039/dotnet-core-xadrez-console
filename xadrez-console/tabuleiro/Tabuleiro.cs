@@ -26,6 +26,17 @@
         {
             return pecas[linha, coluna];
         }
+
+        /// <summary>
+        /// Método para colocar peça no tabuleiro.
+        /// </summary>
+        /// <param name="p">Define uma instância da classe Peca.</param>
+        /// <param name="pos">Define uma instância da classe Posicao.</param>
+        public void ColocarPeca(Peca p, Posicao pos) 
+        {
+            pecas[pos.Linha, pos.Coluna] = p;
+            p.Posicao = pos;
+        }
     }
 
 }

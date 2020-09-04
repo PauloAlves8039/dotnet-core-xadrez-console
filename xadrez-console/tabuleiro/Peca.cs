@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     /// <summary>
     /// Classe responsável pela atribuição das peças no tabuleiro associadas as cores e posições. 
