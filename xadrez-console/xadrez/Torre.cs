@@ -3,18 +3,18 @@
 namespace xadrez
 {
     /// <summary>
-    /// Classe responsável por representar a entidade Rei.
+    /// Classe responsável por representar a entidade Torre.
     /// </summary>
-    class Rei : Peca
+    class Torre : Peca
     {
-        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
 
         }
 
         public override string ToString()
         {
-            return "R";
+            return "T";
         }
     }
 }
