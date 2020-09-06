@@ -17,5 +17,13 @@
             Tab = tab;
             QteMovimentos = 0;
         }
+
+        /// <summary>
+        /// Método para incrementar a quantidade de movimentos das peças.
+        /// </summary>
+        public void IncrementarQteMovimentos() 
+        {
+            QteMovimentos++;
+        }
     }
 }

@@ -5,8 +5,15 @@
     /// </summary>
     class Tabuleiro
     {
+        /// <value>Representa o valor das linhas.</value>
         public int Linhas { get; set; }
+
+        /// <value>Representa o valor das colunas.</value>
         public int Colunas { get; set; }
+
+        /// <summary>
+        /// Matriz responsável pela estrutura das posições das peças no tabuleiro.
+        /// </summary>
         private Peca[,] pecas;
 
         public Tabuleiro(int linhas, int colunas)
@@ -61,6 +68,23 @@
             }
             pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
+        }
+
+        /// <summary>
+        /// Método para retirar peça de um determinada posição no tabuleiro.
+        /// </summary>
+        /// <param name="pos">Identifica a posição da peça a ser removida no tabuleiro.</param>
+        /// <returns>Posição onde a peça foi removida.</returns>
+        public Peca RetirarPeca(Posicao pos) 
+        {
+            if (RetornarPeca(pos) == null) 
+            {
+                return null;
+            }
+            Peca aux = RetornarPeca(pos);
+            aux.Posicao = null;
+            pecas[pos.Linha, pos.Coluna] = null;
+            return aux;
         }
 
         /// <summary>
