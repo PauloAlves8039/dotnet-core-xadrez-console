@@ -3,7 +3,7 @@
     /// <summary>
     /// Classe responsável pela atribuição das peças no tabuleiro associadas as cores e posições. 
     /// </summary>
-    class Peca
+    abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
@@ -25,5 +25,11 @@
         {
             QteMovimentos++;
         }
+
+        /// <summary>
+        /// Método para indicar os possiveis movimentos das peças.
+        /// </summary>
+        /// <returns>Uma matriz com as posições das peças.</returns>
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
