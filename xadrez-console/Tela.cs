@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 using xadrez;
 
@@ -9,6 +10,52 @@ namespace xadrez_console
     /// </summary>
     class Tela
     {
+        /// <summary>
+        /// Método para imprimir partida.
+        /// </summary>
+        /// <param name="partida">Recebe uma instância da classe PartidaDeXadrez.</param>
+        public static void ImprimirPartida(PartidaDeXadrez partida) 
+        {
+            ImprimirTabuleiro(partida.Tab);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.Turno);
+            Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+        }
+
+        /// <summary>
+        /// Método para imprimir peças capturadas.
+        /// </summary>
+        /// <param name="partida">Recebe uma instância da classe PartidaDeXadrez.</param>
+        public static void ImprimirPecasCapturadas(PartidaDeXadrez partida) 
+        {
+            Console.WriteLine("Peças capturadas:");
+            Console.Write("Brancas: ");
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Método para imprimir um conjunto de peças.
+        /// </summary>
+        /// <param name="conjunto">Define um conjunto de peças.</param>
+        public static void ImprimirConjunto(HashSet<Peca> conjunto) 
+        {
+            Console.Write("[");
+            foreach (Peca x in conjunto) 
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("]");
+        }
+
         /// <summary>
         /// Método responsável pela impressão o tabuleiro em tela.
         /// </summary>

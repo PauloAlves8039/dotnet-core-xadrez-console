@@ -12,15 +12,12 @@ namespace xadrez_console
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                try
+                while (!partida.Terminada) 
                 {
-                    while (!partida.Terminada)
+                    try
                     {
                         Console.Clear();
-                        Tela.ImprimirTabuleiro(partida.Tab);
-                        Console.WriteLine();
-                        Console.WriteLine("Turno: " + partida.Turno);
-                        Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                        Tela.ImprimirPartida(partida);
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
@@ -38,15 +35,14 @@ namespace xadrez_console
                         partida.ValidarPosicaoDeDestino(origem, destino);
 
                         partida.RealizaJogada(origem, destino);
-                    }
-                }
-                catch (TabuleiroException e)
-                {
-                    Console.WriteLine(e.Message);
-                    Console.ReadLine();
-                }
 
-                             
+                    }
+                    catch (TabuleiroException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.ReadLine();
+                    }
+                }                              
             }
             catch (TabuleiroException e)
             {
