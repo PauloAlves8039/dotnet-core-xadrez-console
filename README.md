@@ -1,7 +1,7 @@
 # Dotnet core Xadrez Console
 
 ## :computer: Projeto
-Aplicação console para simular um jogo de xadrez utilizando .NET Core e a linguagem C#, código do projeto foi baseado no curso 
+Aplicação console desenvolvida para fins academicos onde simula um jogo de xadrez utilizando .NET Core e a linguagem C#, código do projeto foi baseado no curso 
 [C# COMPLETO 2020 Programação Orientada a Objetos + Projetos](https://www.udemy.com/course/programacao-orientada-a-objetos-csharp/).
 
 ## :wrench: Recursos Utilizados
